@@ -6,10 +6,10 @@ pub struct BlackBox {
 
 impl BlackBox {
     pub fn new(path: &str) -> Self {
-        Self {
-            filepath: path.to_string(),
-        }
+    Self {
+        filepath: path.to_string(), // Asegúrese de que sea así
     }
+}
 
     pub fn save_log(&self, data: &[u8]) -> bool {
         !data.is_empty()
