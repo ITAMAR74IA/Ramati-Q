@@ -1,0 +1,53 @@
+Origen
+
+# Fase 1.5: Planificación y Objetivos
+
+# Establecer una meta espacial para el robot
+objetivo 80.0 80.0
+
+# Variables para almacenar la percepción del entorno
+espectro distancia_frontal = 1.0
+espectro angulo_relativo_objetivo = 0.0
+espectro distancia_derecha = 1.0
+
+# Bucle de navegación autónoma orientada a objetivos
+bucle_cognitivo 150 ->
+    # 1. Percepción: Leer sensores externos e internos
+    capturar distancia_frontal de sensor_frontal
+    capturar angulo_relativo_objetivo de angulo_relativo_objetivo
+    capturar distancia_derecha de sensor_derecho
+
+    diagnostico_hardware
+
+    # --- LÓGICA DE NAVEGACIÓN ESTRATÉGICA (Fase 1.5 Final) ---
+
+    # PRIORIDAD 1: Evasión de Obstáculos Inteligente
+    # Si el frente está bloqueado Y la derecha también (esquina), gira a la izquierda.
+    si_difuso distancia_frontal < 0.5 y_difuso distancia_derecha < 0.6 ->
+        accionar giro_izquierda con 1.0
+        accionar avance_lineal con 0.0
+    fin_si
+
+    # Si el frente está bloqueado PERO la derecha está libre, gira a la derecha (seguir pared).
+    si_difuso distancia_frontal < 0.5 y_difuso distancia_derecha >= 0.6 ->
+        accionar giro_derecha con 0.8 # Girar para bordear el obstáculo
+        accionar avance_lineal con 0.4 # Avanzar lentamente mientras se gira
+    fin_si
+
+    # PRIORIDAD 2: Búsqueda del Objetivo (Solo si el camino está despejado)
+    si_difuso distancia_frontal >= 0.5 y_difuso angulo_relativo_objetivo > 0.15 ->
+        accionar giro_izquierda con 0.5 # Girar hacia el objetivo (izquierda)
+    fin_si
+
+    si_difuso distancia_frontal >= 0.5 y_difuso angulo_relativo_objetivo < -0.15 ->
+        accionar giro_derecha con 0.5 # Girar hacia el objetivo (derecha)
+    fin_si
+
+    si_difuso distancia_frontal >= 0.5 y_difuso angulo_relativo_objetivo > -0.15 y_difuso angulo_relativo_objetivo < 0.15 ->
+        accionar avance_lineal con 1.0 # Avanzar si ya está orientado
+        accionar giro_derecha con 0.0 # Dejar de girar
+        accionar giro_izquierda con 0.0
+    fin_si
+fin_bucle
+
+colapsar

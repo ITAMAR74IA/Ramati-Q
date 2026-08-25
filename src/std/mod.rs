@@ -4,3 +4,4 @@ pub mod fuzzy;
 pub mod io;
 pub mod quantum;
 pub mod spatial;
+pub mod planning;

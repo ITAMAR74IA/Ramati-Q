@@ -1,0 +1,30 @@
+{
+  "name": "Ramati-Q",
+  "scopeName": "source.rmq",
+  "fileTypes": ["rmq"],
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#keywords" },
+    { "include": "#strings" },
+    { "include": "#numbers" }
+  ],
+  "repository": {
+    "comments": {
+      "match": "#.*$",
+      "name": "comment.line.number-sign.rmq"
+    },
+    "keywords": {
+      "match": "\\b(origen|variable_difusa|entrelazar|interferir|colapsar|evaluar|diagnostico|unir|oponer|fluctuar|crear_campo|afectar_campo|sintonizar|si_difuso|sino|y_difuso|entonces|mostrar|capturar|observar|superponer|armonizar|mutar|resonar|resonar_bucle|entrelazar_canales)\\b",
+      "name": "keyword.control.rmq"
+    },
+    "strings": {
+      "begin": "[\"«]",
+      "end": "[\"»]",
+      "name": "string.quoted.double.rmq"
+    },
+    "numbers": {
+      "match": "\\b\\d+(\\.\\d+)?\\b",
+      "name": "constant.numeric.rmq"
+    }
+  }
+}

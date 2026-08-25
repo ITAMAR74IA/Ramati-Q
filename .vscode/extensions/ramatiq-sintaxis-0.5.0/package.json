@@ -1,0 +1,21 @@
+{
+  "name": "ramatiq-sintaxis",
+  "displayName": "RamatiQ",
+  "version": "0.5.0",
+  "engines": {
+    "vscode": "^1.0.0"
+  },
+  "contributes": {
+    "languages": [{
+      "id": "ramatiq",
+      "aliases": ["RamatiQ", "ramatiq"],
+      "extensions": [".rmq"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "ramatiq",
+      "scopeName": "source.ramatiq",
+      "path": "./ramatiq.tmLanguage.json"
+    }]
+  }
+}
