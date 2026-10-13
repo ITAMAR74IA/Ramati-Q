@@ -1,0 +1,2 @@
+# Programa de prueba Ramati-Q
+imprimir "Hola mundo soberano desde Ramati-Q"

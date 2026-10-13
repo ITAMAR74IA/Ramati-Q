@@ -4,7 +4,11 @@ version = "0.1.0"
 edition = "2024"
 description = "Kernel Cognitivo Cuántico Difuso para Ramati-Q"
 license = "MIT"
+authors = ["ITAMAR74IA"]
+repository = "https://github.com/ITAMAR74IA/Ramati-Q"
 
-[dependencies]
-serde_json = "1.0"
-serde = { version = "1.0", features = ["derive"] }
+[package.metadata.wix]
+upgrade-guid = "4D51792E-81D8-4B8F-B548-9CD5F0ADC351"
+path-guid = "40CF2CC5-83A0-495B-B665-EC918C8DA4BD"
+license = false
+eula = false

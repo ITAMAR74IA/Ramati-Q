@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramati-Q | Lenguaje Nativo de Inteligencia Cognitiva</title>
+    <meta name="description" content="Ramati-Q es un lenguaje de programación nativo para robótica, lógica difusa e inteligencia cognitiva. Descarga el compilador, explora la documentación y accede a la referencia técnica del proyecto.">
+    <meta name="keywords" content="Ramati-Q, lenguaje de programación, compilador, robótica, lógica difusa, inteligencia cognitiva, descarga, programación en español, descarga Ramati-Q, software para robots">
+    <meta name="author" content="Ramati-Q Project">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="theme-color" content="#081a2b">
+    <link rel="canonical" href="https://www.ramati-q.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Ramati-Q | Lenguaje Nativo de Inteligencia Cognitiva">
+    <meta property="og:description" content="Compilador y lenguaje nativo para robótica, lógica difusa e inteligencia cognitiva. Descarga Ramati-Q y explora la documentación oficial.">
+    <meta property="og:url" content="https://www.ramati-q.com/">
+    <meta property="og:image" content="https://www.ramati-q.com/Logo-oficial-Ramati-Q.png">
+    <meta property="og:site_name" content="Ramati-Q">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ramati-Q | Lenguaje Nativo de Inteligencia Cognitiva">
+    <meta name="twitter:description" content="Ramati-Q es un lenguaje nativo para sistemas cognitivos, robótica y lógica difusa.">
+    <meta name="twitter:image" content="https://www.ramati-q.com/Logo-oficial-Ramati-Q.png">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Ramati-Q",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": ["Windows", "Linux", "macOS"],
+      "softwareVersion": "0.1.0",
+      "description": "Lenguaje de programación nativo para robótica, lógica difusa e inteligencia cognitiva con compilador propio.",
+      "keywords": "Ramati-Q, lenguaje de programación, compilador, robótica, lógica difusa, inteligencia cognitiva, descarga",
+      "url": "https://www.ramati-q.com/",
+      "downloadUrl": "https://www.ramati-q.com/#descargas",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #0a041a 0%, #120b2e 35%, #082844 70%, #031424 100%);
+            background-attachment: fixed;
+            color: #f8fafc;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        /* Barra de navegación superior estilo lenguajes profesionales (Rust/Go) */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 4rem;
+            background: rgba(4, 8, 14, 0.6);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 210, 255, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .nav-logo {
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: #00d2ff;
+            letter-spacing: 1px;
+            cursor: pointer;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        nav ul li a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+        nav ul li a:hover {
+            color: #00d2ff;
+            text-shadow: 0 0 10px rgba(0, 210, 255, 0.4);
+        }
+
+        .main-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        .logo-principal {
+            max-width: 320px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 0 30px rgba(0, 210, 255, 0.4)) drop-shadow(0 0 15px rgba(255, 140, 0, 0.3));
+            transition: transform 0.3s ease;
+        }
+        .logo-principal:hover {
+            transform: scale(1.02);
+        }
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+        h1 span {
+            color: #00d2ff;
+            text-shadow: 0 0 20px rgba(0, 210, 255, 0.5);
+        }
+        .tagline {
+            font-size: 1.2rem;
+            color: #cbd5e1;
+            max-width: 820px;
+            margin: 0 auto 0.7rem auto;
+            line-height: 1.6;
+        }
+        .tagline.secondary {
+            font-size: 1rem;
+            color: #a5b4c7;
+            margin-bottom: 1.5rem;
+        }
+        .badge-row {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin: 0 auto 2.5rem auto;
+        }
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem 0.9rem;
+            border-radius: 999px;
+            background: rgba(0, 210, 255, 0.14);
+            border: 1px solid rgba(0, 210, 255, 0.4);
+            color: #dff9ff;
+            font-size: 0.8rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        .status-badge.muted {
+            background: rgba(148, 163, 184, 0.08);
+            border-color: rgba(148, 163, 184, 0.25);
+            color: #cbd5e1;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+            text-align: left;
+        }
+        .feature-box {
+            background-color: rgba(15, 28, 46, 0.7);
+            border: 1px solid rgba(0, 210, 255, 0.3);
+            border-radius: 8px;
+            padding: 1.5rem;
+            backdrop-filter: blur(10px);
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        .feature-box:hover {
+            border-color: #00d2ff;
+            box-shadow: 0 0 15px rgba(0, 210, 255, 0.2);
+        }
+        .feature-box h3 {
+            color: #00d2ff;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        .feature-box p {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+        .why-ramati {
+            margin-top: 2.5rem;
+            margin-bottom: 2rem;
+            background: rgba(7, 14, 26, 0.78);
+            border: 1px solid rgba(0, 210, 255, 0.2);
+            border-radius: 18px;
+            padding: 2rem 1.5rem;
+            box-shadow: 0 20px 40px rgba(2, 10, 20, 0.35);
+        }
+        .why-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        .why-header h3 {
+            color: #fff;
+            font-size: clamp(1.4rem, 2vw, 2rem);
+            letter-spacing: 0.04em;
+            margin-bottom: 0.5rem;
+        }
+        .why-header p {
+            color: #a5b4c7;
+            max-width: 680px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+        }
+        .why-card {
+            background: rgba(15, 28, 46, 0.72);
+            border: 1px solid rgba(255, 140, 0, 0.2);
+            border-radius: 12px;
+            padding: 1.2rem;
+        }
+        .why-card strong {
+            display: block;
+            color: #00d2ff;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        .why-card span {
+            color: #dce7f7;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .launch-panel {
+            margin-top: 1.5rem;
+            padding: 1.5rem 1.25rem;
+            border-radius: 14px;
+            background: linear-gradient(135deg, rgba(0, 210, 255, 0.12), rgba(255, 140, 0, 0.08));
+            border: 1px solid rgba(0, 210, 255, 0.3);
+            text-align: center;
+        }
+        .launch-panel p {
+            color: #dfeaf8;
+            margin-bottom: 0.8rem;
+            font-size: 1rem;
+        }
+        .action-container {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+        .btn-soberano {
+            display: inline-block;
+            background: linear-gradient(135deg, #00d2ff, #ff8c00);
+            color: #04080e;
+            padding: 0.9rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 6px;
+            text-decoration: none;
+            box-shadow: 0 4px 25px rgba(0, 210, 255, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            border: none;
+        }
+        .btn-soberano:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(0, 210, 255, 0.6);
+        }
+        .btn-secundario {
+            display: inline-block;
+            background: rgba(15, 28, 46, 0.8);
+            color: #00d2ff;
+            border: 1px solid rgba(0, 210, 255, 0.5);
+            padding: 0.9rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background 0.2s, border-color 0.2s;
+            cursor: pointer;
+        }
+        .btn-secundario:hover {
+            background: rgba(0, 210, 255, 0.1);
+            border-color: #00d2ff;
+        }
+
+        /* Secciones dinámicas (Modales o Vistas Ocultas) */
+        .content-section {
+            display: none;
+            background: rgba(10, 18, 30, 0.9);
+            border: 1px solid rgba(0, 210, 255, 0.3);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-top: 2rem;
+            text-align: left;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+        .content-section.active {
+            display: block;
+        }
+        .content-section h2 {
+            color: #00d2ff;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+        .content-section p, .content-section li {
+            color: #cbd5e1;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        .content-section ul {
+            padding-left: 1.5rem;
+        }
+        .doc-panel {
+            background: rgba(3, 7, 18, 0.92);
+            border: 1px solid rgba(0, 210, 255, 0.25);
+            border-radius: 12px;
+            padding: 1.25rem;
+            margin: 1.2rem 0 1.5rem 0;
+        }
+        .doc-badge {
+            display: inline-block;
+            background: rgba(0, 210, 255, 0.12);
+            border: 1px solid rgba(0, 210, 255, 0.35);
+            color: #8fe9ff;
+            border-radius: 999px;
+            padding: 0.35rem 0.8rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 0.8rem;
+        }
+        .doc-code {
+            background: #030712;
+            color: #38bdf8;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            border-radius: 8px;
+            padding: 1rem;
+            overflow-x: auto;
+            margin-top: 0.8rem;
+            white-space: pre-wrap;
+            line-height: 1.6;
+            font-family: 'Consolas', 'Courier New', monospace;
+        }
+        .doc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .doc-card {
+            background: rgba(15, 28, 46, 0.7);
+            border: 1px solid rgba(255, 140, 0, 0.18);
+            border-radius: 12px;
+            padding: 1rem;
+        }
+        .doc-card strong {
+            display: block;
+            color: #00d2ff;
+            margin-bottom: 0.45rem;
+            font-size: 0.98rem;
+        }
+        .doc-card span {
+            color: #dfeaf8;
+            font-size: 0.93rem;
+            line-height: 1.6;
+        }
+        .doc-note {
+            margin-top: 1rem;
+            color: #b8c4d8;
+            font-style: italic;
+        }
+        code {
+            background: #030712;
+            color: #10b981;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: rgba(4, 8, 14, 0.8);
+            border-top: 1px solid rgba(0, 210, 255, 0.2);
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra de Navegación Interactiva -->
+    <header>
+        <div class="nav-logo" onclick="mostrarSeccion('inicio')">RAMATI-Q CORE</div>
+        <nav>
+            <ul>
+                <li><a onclick="mostrarSeccion('inicio')">Inicio</a></li>
+                <li><a onclick="mostrarSeccion('descargas')">Descargas</a></li>
+                <li><a onclick="mostrarSeccion('documentacion')">Documentación</a></li>
+                <li><a onclick="mostrarSeccion('comunidad')">Comunidad</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main-container">
+        
+        <!-- VISTA PRINCIPAL (INICIO) -->
+        <div id="inicio" class="content-section active" style="background: transparent; border: none; padding: 0; text-align: center;">
+            <img src="Logo-oficial-Ramati-Q.png" alt="Logotipo Oficial Ramati-Q" class="logo-principal">
+            
+            <h1>RAMATI<span>-Q</span></h1>
+            <p class="tagline">Ramati-Q es el lenguaje nativo para inteligencia cognitiva, robótica autónoma y decisiones complejas bajo incertidumbre.</p>
+            <p class="tagline secondary">Rust es la base técnica y de rendimiento, pero Ramati-Q es la marca, la identidad y la experiencia principal del producto.</p>
+
+            <div class="badge-row" aria-label="Indicadores del proyecto">
+                <span class="status-badge">Original</span>
+                <span class="status-badge muted">Soberano</span>
+                <span class="status-badge muted">Autónomo</span>
+                <span class="status-badge muted">Difuso</span>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-box">
+                    <h3>Lenguaje original</h3>
+                    <p>Ramati-Q presenta una sintaxis propia pensada para expresar inteligencia, autonomía y decisiones con claridad en español.</p>
+                </div>
+                <div class="feature-box">
+                    <h3>Base técnica sólida</h3>
+                    <p>Rust aporta estabilidad y rendimiento, mientras Ramati-Q mantiene la cara pública, la visión y la experiencia del producto.</p>
+                </div>
+                <div class="feature-box">
+                    <h3>Motor difuso nativo</h3>
+                    <p>Variables, espectros, inferencia y planificación cognitiva forman parte del núcleo del lenguaje sin que la infraestructura opaca la identidad de Ramati-Q.</p>
+                </div>
+            </div>
+
+            <div class="why-ramati">
+                <div class="why-header">
+                    <h3>¿Por qué Ramati-Q?</h3>
+                    <p>Porque la innovación no nace repitiendo paradigmas ajenos, sino creando una base propia para decisiones inteligentes, automatización cognitiva y sistemas que responden con criterio en español.</p>
+                </div>
+                <div class="why-grid">
+                    <div class="why-card">
+                        <strong>Identidad propia</strong>
+                        <span>Una sintaxis nativa, un motor cognitivo diferencial y una visión orientada a la inteligencia aplicada real.</span>
+                    </div>
+                    <div class="why-card">
+                        <strong>Soberanía técnica</strong>
+                        <span>Sin depender de un ecosistema ajeno para definir el núcleo del lenguaje, la ejecución ni la arquitectura de control.</span>
+                    </div>
+                    <div class="why-card">
+                        <strong>Diseño para impacto real</strong>
+                        <span>Orientado a robótica, automatización, procesos inteligentes y decisiones con incertidumbre.</span>
+                    </div>
+                </div>
+                <div class="launch-panel">
+                    <p>Ramati-Q está hecho para abrir camino, no para copiarlo.</p>
+                    <button class="btn-soberano" onclick="mostrarSeccion('descargas')">Lanzar Ramati-Q al mundo</button>
+                </div>
+            </div>
+
+            <div class="action-container">
+                <button class="btn-soberano" onclick="mostrarSeccion('descargas')">Descargar Ramati-Q v0.1.0</button>
+                <button class="btn-secundario" onclick="mostrarSeccion('documentacion')">Ver manual técnico</button>
+            </div>
+        </div>
+
+        <!-- VISTA DE DESCARGAS (Conectada a la distribución oficial) -->
+        <div id="descargas" class="content-section">
+            <h2>Zona de Descargas Oficiales</h2>
+            <p>Obtenga el compilador soberano de Ramati-Q y comience a ejecutar sus programas de control cognitivo de inmediato.</p>
+            <ul>
+                <li><strong>Windows (x86_64):</strong> <code>ramatiq-setup.exe</code>
+                    <a href="../../dist/ramatiq-setup.exe" download class="btn-secundario" style="padding: 0.3rem 1rem; font-size: 0.9rem; margin-left: 1rem; text-decoration: none; display: inline-block;">Descargar</a>
+                </li>
+                <br>
+                <li><strong>Linux (ELF Core):</strong> <code>ramatiq-v0.1.0-linux-amd64.bin</code>
+                    <a href="../../dist/ramatiq-v0.1.0-linux-amd64.bin" download class="btn-secundario" style="padding: 0.3rem 1rem; font-size: 0.9rem; margin-left: 1rem; text-decoration: none; display: inline-block;">Descargar</a>
+                </li>
+                <br>
+                <li><strong>macOS (Apple Silicon / Intel):</strong> <code>ramatiq-v0.1.0-universal.pkg</code>
+                    <a href="../../dist/ramatiq-v0.1.0-universal.pkg" download class="btn-secundario" style="padding: 0.3rem 1rem; font-size: 0.9rem; margin-left: 1rem; text-decoration: none; display: inline-block;">Descargar</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- VISTA DE DOCUMENTACIÓN -->
+        <div id="documentacion" class="content-section">
+            <h2>📖 Manual de Referencia Técnica</h2>
+            <p>Ramati-Q procesa scripts con extensión <code>.rmq</code> orientados a la robótica, la lógica difusa y la programación cognitiva autónoma.</p>
+
+            <div class="doc-panel">
+                <div class="doc-badge">Sintaxis central</div>
+                <p><strong>Ejemplo de flujo cognitivo:</strong></p>
+                <pre class="doc-code"># Establecer objetivos y espectros
+objetivo 80.0 80.0
+espectro distancia_frontal = 1.0
+
+bucle_cognitivo 150 ->
+    capturar distancia_frontal de sensor_frontal
+    si_difuso distancia_frontal &lt; 0.5 ->
+        accionar giro_izquierda con 1.0
+    fin_si
+fin_bucle</pre>
+            </div>
+
+            <div class="doc-grid">
+                <div class="doc-card">
+                    <strong>1. Estructura del programa</strong>
+                    <span>Todo script se compone de objetivos, espectros, bucles cognitivos y acciones dirigidas por decisiones difusas.</span>
+                </div>
+                <div class="doc-card">
+                    <strong>2. Ejecución del compilador</strong>
+                    <span>El pipeline analiza, valida y ejecuta sentencias con un enfoque nativo orientado a sistemas inteligentes.</span>
+                </div>
+                <div class="doc-card">
+                    <strong>3. Semántica diferencial</strong>
+                    <span>El lenguaje interpreta variables, rangos y decisiones con lógica cognitiva integrada desde su base.</span>
+                </div>
+            </div>
+
+            <p class="doc-note">Consulte la arquitectura completa del compilador y el pipeline de ejecución en el repositorio oficial para profundizar en cada fase del diseño.</p>
+        </div>
+
+        <!-- VISTA DE COMUNIDAD -->
+        <div id="comunidad" class="content-section">
+            <h2>🌐 Comunidad y Ecosistema Soberano</h2>
+            <p>Únase al comité de desarrollo, aporte al núcleo de Ramati-Q y comparta sus experiencias creando sistemas inteligentes con un lenguaje original en español.</p>
+            <p>🔗 <strong>Repositorio oficial:</strong> <a href="https://github.com/ITAMAR74IA/Ramati-Q" target="_blank" rel="noopener noreferrer" style="color: #00d2ff; text-decoration: none; font-weight: 700;">github.com/ITAMAR74IA/Ramati-Q</a></p>
+            <p>💬 <strong>Canal de ingeniería:</strong> foros oficiales de arquitectura cuántico-difusa, discusión técnica y evolución del lenguaje.</p>
+            <p>🤝 <strong>Convocatoria:</strong> colaborar en compilación, semántica, módulos, documentación y validación de sistemas cognitivos con enfoque soberano.</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Ramati-Q Project. Arquitectura y tecnología soberana.</p>
+    </footer>
+
+    <script>
+        // Función maestra para cambiar de vistas de forma fluida (Dinámica estilo Go/Java/Rust docs)
+        function mostrarSeccion(idSeccion) {
+            const secciones = document.querySelectorAll('.content-section');
+            secciones.forEach(sec => {
+                sec.classList.remove('active');
+            });
+            document.getElementById(idSeccion).classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+
+</body>
+</html>
